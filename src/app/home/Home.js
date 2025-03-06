@@ -45,7 +45,7 @@ const content = {
     }
   },
   fr: {
-    title: ['Bonjour, je suis Tingni Li', 'Développeuse Full Stack', 'Ingénieure de Données'],
+    title: ['Bonjour, je suis Tingni Li', 'Développeuse Full Stack'],
     description: 'Je suis une développeuse Full-Stack et ingénieure de données spécialisée dans le développement backend haute performance, le traitement de données à grande échelle et les systèmes de monitoring en temps réel. Passionnée par l\'optimisation des systèmes, j\'ai réussi à réduire les temps de réponse des requêtes de plusieurs minutes à quelques secondes.',
     viewProjects: 'Voir les Projets',
     contactMe: 'Me Contacter',
@@ -84,7 +84,7 @@ const content = {
     }
   },
   zh: {
-    title: ['你好，我是李亭伲', '全栈开发工程师', '数据工程师'],
+    title: ['你好，我是李亭伲', '全栈开发工程师'],
     description: '我是一名专注于高性能后端开发、大规模数据处理和实时监控系统的全栈开发工程师和数据工程师。热衷于系统优化，成功将查询响应时间从分钟级别降低到秒级，确保流畅的用户体验。',
     viewProjects: '查看项目',
     contactMe: '联系我',
@@ -124,36 +124,11 @@ const content = {
   }
 };
 
-function Home() {
-  const [language, setLanguage] = useState('en');
+function Home({ language }) {
   const text = content[language];
 
   return (
     <main className="flex-grow">
-      {/* Navigation and Language Selector */}
-      <nav className="fixed w-full z-50 flex justify-between items-center px-8 py-4 bg-opacity-90 backdrop-blur-sm">
-        <div className="flex gap-8 text-white">
-          <a href="#home" className="hover:text-gray-300">Home</a>
-          <a href="#about" className="hover:text-gray-300">About</a>
-          <a href="#projects" className="hover:text-gray-300">Projects</a>
-        </div>
-        <div className="flex gap-2">
-          {['en', 'fr', 'zh'].map((lang) => (
-            <button
-              key={lang}
-              onClick={() => setLanguage(lang)}
-              className={`px-3 py-1 rounded-full text-sm ${
-                language === lang 
-                  ? 'bg-white text-indigo-600' 
-                  : 'text-white border border-white hover:bg-white/10'
-              }`}
-            >
-              {lang.toUpperCase()}
-            </button>
-          ))}
-        </div>
-      </nav>
-
       {/* Hero Section with Animation */}
       <section id="home" className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-white">
         <div className="container mx-auto px-4 py-20">
@@ -223,7 +198,7 @@ function Home() {
             {/* Social Links */}
             <div className="flex justify-center gap-6 mb-10">
               <motion.a
-                href="https://github.com/tingni-li"
+                href="https://github.com/TingniL"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
