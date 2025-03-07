@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaPython, FaAngular, FaDocker, FaDownload } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
+import ContactModal from '../shared-private/ContactModal';
+import { useNavigate } from 'react-router-dom';
 
 const content = {
   en: {
@@ -125,10 +127,17 @@ const content = {
 };
 
 function Home({ language }) {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const navigate = useNavigate();
   const text = content[language];
 
   return (
     <main className="flex-grow">
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        language={language}
+      />
       {/* Hero Section with Animation */}
       <section id="home" className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-white">
         <div className="container mx-auto px-4 py-20">
@@ -223,6 +232,7 @@ function Home({ language }) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-indigo-100 transition duration-300"
+                onClick={() => navigate('/projects')}
               >
                 {text.viewProjects}
               </motion.button>
@@ -240,6 +250,7 @@ function Home({ language }) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition duration-300"
+                onClick={() => setIsContactModalOpen(true)}
               >
                 {text.contactMe}
               </motion.button>

@@ -1,7 +1,6 @@
 // src/app/shared-private/Navbar.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 const content = {
   en: {

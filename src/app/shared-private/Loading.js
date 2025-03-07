@@ -18,10 +18,10 @@ const Loading = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="text-6xl font-bold text-white font-serif"
+          className="text-6xl font-bold text-white"
           style={{
-            textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-            fontFamily: 'Playfair Display, serif'
+            fontFamily: 'Dancing Script, cursive',
+            textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
           }}
         >
           Tingni
@@ -41,8 +41,8 @@ const Loading = () => {
           }}
           className="text-6xl font-bold text-white"
           style={{
-            textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-            fontFamily: 'Cinzel, serif'
+            fontFamily: 'Great Vibes, cursive',
+            textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
           }}
         >
           LI
